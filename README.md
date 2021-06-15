@@ -15,5 +15,4 @@ déjà c'est un bon début.
 - Je vais faire des recherches sur bootstrap de mon côté 
 - Pas besoin de faire des modules de regex on peut utiliser du JS pour le faire faire plus rapidement/proprement (: https://itnext.io/https-medium-com-joshstudley-form-field-validation-with-html-and-a-little-javascript-1bda6a4a4c8c )
 
-- Let's go gratter des ref pour le html 
-qjfiqjfqjf
+- Let's go gratter des ref pour le html
