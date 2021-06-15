@@ -1,0 +1,5 @@
+.top_bar {
+    height: 50px;
+    background-color: dimgray;
+    justify-content: space-between;
+}

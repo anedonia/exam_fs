@@ -1,11 +1,10 @@
 <?php
 session_start();
-
 	try 
 	{
 		if (!isset($_GET['action']))
 		{
-			include('./controller/login.php');
+			include('./controller/main_page.php');
 		}
 		else 
 		{
@@ -20,8 +19,8 @@ session_start();
 				case 'sign_out':
 					include("./controller/sign_out.php");
 					break;
-				case  'shop':
-					include("./controller/shop.php");
+				case  'main_page':
+					include("./controller/main_page.php");
 					break;
 				case  'accueil':
 					include("./controller/accueil.php");
@@ -33,7 +32,7 @@ session_start();
 					include("./controller/voir_cart.php");
 					break;
 				default :
-					include("./controller/login.php");
+					include("./controller/main_page.php");
 			}
 		}
 	}
