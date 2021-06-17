@@ -41,12 +41,12 @@
     
     $bdd = db_connect();
 
-    $sql = 'SELECT id_musique, titre,prix,description
-    from stock 
-    LEFT join fait_par on stock.id_musique = fait_par.id_musique_2 
-    left JOIN auteur on fait_par.id_auteur = auteur.id_auteur 
-    where titre like CONCAT("%", ? , "%")
-    OR nom like CONCAT("%", ? , "%") ';     
+    $sql = 'SELECT media.id_media,media.media_name,media.media_price,auteur.last_name
+    FROM media
+    JOIN fait_par ON media.id_media = fait_par.id_media
+    JOIN auteur ON fait_par.id_auteur = auteur.id_auteur
+    where media.media_name like CONCAT("%", ? , "%")
+    OR auteur.last_name like CONCAT("%", ? , "%") ';     
 
     $req = $bdd -> prepare ($sql);
     $req->execute([$mot,$mot]);

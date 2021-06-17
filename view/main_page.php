@@ -12,7 +12,9 @@
 .main {
   margin-top: 2rem;
 }
-
+.espace{
+  padding: 0.5rem;
+}
 </style>
 
 </head>

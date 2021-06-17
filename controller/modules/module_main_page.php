@@ -7,8 +7,8 @@ function media_show($media)
     for ($i=0;$i < count($media); $i++) 
     {
         array_push($tab_html,
-            '<div class="col">
-            <div class="card mb-3" style="max-width: 540px;">
+            '<div class="col espace">
+            <div class="card mb-3 h-100" style="max-width: 500px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                     <img class="card-img-top" src= "./public/img/'.$media[$i]["id_media"].'.jpg" alt="'.$media[$i]["media_name"].'">
