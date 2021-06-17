@@ -4,7 +4,7 @@ session_start();
 	{
 		if (!isset($_GET['action']))
 		{
-			include('./controller/main_page.php');
+			include('./controller/login.php');
 		}
 		else 
 		{
