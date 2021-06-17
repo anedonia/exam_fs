@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
+<title>Main page</title>
 <meta charset="utf-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<style>
+.bg-light{
+    background-color: #ababab!important;
+}
+.main {
+  margin-top: 2rem;
+}
 
+</style>
 
 </head>
 <body>
@@ -55,6 +63,20 @@
     </div>
   </div>
 </nav>
+
+<div class="container main">
+  <div class="row row-cols-3">
+
+    <?php 
+      if (isset($content))
+      {
+        echo $content; 
+      }
+    ?>
+
+  </div>
+</div>
+    
 
 
 

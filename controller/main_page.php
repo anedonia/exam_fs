@@ -1,13 +1,14 @@
 <?php
 
-//require_once('model\shop.php');
-// require('modules/module_shop.php');
+require('modules/module_main_page.php');
+require('./model/main_page.php');
 // $page_css = "\"./public/style_shop.css\"";
 // $title = "Shop";
-//echo affichage_items(8, 'lunedefiel', 99.99, "la baise");
 
 
+$media = formulation_media();
 
+$content = media_show($media);
 
 require('.\view\main_page.php');
 
