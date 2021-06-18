@@ -5,7 +5,7 @@ function formulaire_login(){
     <form action="" method="POST" id="signUpForm">
         <input type="text" name="pseudo" id="emailField" required>
         <input type="password" name="mdp" required>
-        <input type="submit" value="connexion" id="okButton">
+        <input type="submit" value="connexion" id="okButton" disabled>
     </form>
     <form action="routeur.php" method="GET">
         <input type="submit" name="action" value="register">
@@ -16,17 +16,17 @@ function formulaire_login(){
         const okButton = document.getElementById("okButton");
         
         emailField.addEventListener("keyup", function (event) {
-        isValidEmail = emailField.checkValidity();
-        
-        if ( isValidEmail ) {
-            okButton.disabled = false;
-        } else {
-            okButton.disabled = true;
-        }
-        });
-        
-        okButton.addEventListener("click", function (event) {
-        signUpForm.submit();
+            isValidEmail = emailField.checkValidity();
+            
+            if ( isValidEmail ) {
+                okButton.disabled = false;
+            } else {
+                okButton.disabled = true;
+            }
+            });
+            
+            okButton.addEventListener("click", function (event) {
+            signUpForm.submit();
         });
     </script>';
 }
