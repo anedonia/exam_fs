@@ -13,7 +13,7 @@ session_start();
 				case  'LOGIN':
 					include("./controller/login.php");
 					break;
-				case  'INSCRIPTION':
+				case  'register':
 					include("./controller/register.php");
 					break;
 				case 'sign_out':
