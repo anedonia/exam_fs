@@ -10,6 +10,7 @@
 <body>
     <div class="box1">
         <?= $content ?>
-        <br><br><br>
+        <br>
+        <a href="routeur.php?action=main_page">MAIN PAGE</a>
 </body>
 </html>

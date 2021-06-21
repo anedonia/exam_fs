@@ -84,7 +84,7 @@ function affichage_ligne(){
         </tr>';
     }
     
-    echo'<tr><td><a href="routeur.php?action=crud&ajouter=True">ajouter</a></td></tr></tbody></table>';
+    echo'<tr><td><a href="routeur.php?action=crud&ajouter=OK">ajouter</a></td></tr></tbody></table>';
 }
 
 function del_user($id_user){
@@ -107,10 +107,31 @@ function affichage_form_modif(){
     </form>';
 }
 
+function affichage_form_add(){
+    echo'
+    <form action="" method="GET">
+        <input type="hidden" name="action" value=crud>
+        <input type="hidden" name="ajouter" value=True>
+        <input type="text" name="first_name" placeholder="first_name" required><br>
+        <input type="text" name="last_name" placeholder="last_name" required><br>
+        <input type="text" name="email" placeholder="email" required><br>
+        <input type="text" name="password" placeholder="password" required><br>
+        <input type="text" name="role" placeholder="role" required><br>
+        <input type="text" name="login_name" placeholder="pseudo" required><br>
+        <input type="submit">
+    </form>';
+}
+
 function update_user($structure, $arg){
     $pdo = db_connect();
     $req = $pdo->prepare('UPDATE `user` SET `'.$structure.'` = "'.$arg.'" WHERE `user`.`id_user` = "'.$_GET["modified"].'";');
     $req->execute();
+}
+
+function add_user($first_name, $last_name, $email, $password, $role, $login_name){
+    $pdo = db_connect();
+    $req = $pdo->prepare('INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `email`, `psw`, `role`, `login_name`) VALUES (NULL, ?, ?, ?, ?, ?, ?);');
+    $req->execute(array($first_name, $last_name, $email, sha1($password), $role, $login_name));
 }
 
 function update_all(){
@@ -124,7 +145,7 @@ function update_all(){
         update_user("email", $_GET["email"]);
     }
     if(!empty($_GET["password"])){
-        update_user("psw", $_GET["password"]);
+        update_user("psw", sha1($_GET["password"]));
     }
     if(!empty($_GET["role"])){
         update_user("role", $_GET["role"]);
