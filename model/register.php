@@ -17,7 +17,7 @@ function db_connect(){
 function ajout_user($pseudo, $nom, $prenom, $email, $mdp){
     $pdo = db_connect();
     //INSERT INTO `user` (`id_user`, `fisrt_name`, `last_name`, `email`, `psw`, `role`, `//`, `login_name`) VALUES (NULL, 'antonin', 'herve', 'anto@gmail.com', 'bite', NULL, NULL, 'antoroute');
-    $req = $pdo->prepare('INSERT INTO `user` (`id_user`, `fisrt_name`, `last_name`, `email`, `psw`, `role`, `login_name`) VALUES (NULL, ?, ?, ?, ?, NULL, ?);');
+    $req = $pdo->prepare('INSERT INTO `user` (`id_user`, `first_name`, `last_name`, `email`, `psw`, `role`, `login_name`) VALUES (NULL, ?, ?, ?, ?, NULL, ?);');
     $req->execute(array($prenom, $nom, $email, $mdp, $pseudo));
 }
 ?>
