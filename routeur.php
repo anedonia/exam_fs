@@ -1,5 +1,6 @@
 <?php
 session_start();
+print_r($_SESSION);
 	try 
 	{
 		if (!isset($_GET['action']))
@@ -16,7 +17,7 @@ session_start();
 				case  'register':
 					include("./controller/register.php");
 					break;
-				case 'sign_out':
+				case 'log_out':
 					include("./controller/sign_out.php");
 					break;
 				case  'main_page':
@@ -28,8 +29,8 @@ session_start();
 				case  'account':
 					include("./controller/voir_profil.php");
 					break;
-				case  'cart':
-					include("./controller/voir_cart.php");
+				case  'admin':
+					include("./controller/admin_page.php");
 					break;
 				default :
 					include("./controller/main_page.php");

@@ -3,6 +3,7 @@ if (empty($_SESSION['id_user'])){
     header('Location: routeur.php');
     exit();
 }
+
 require('modules/module_main_page.php');
 require('./model/main_page.php');
 // $page_css = "\"./public/style_shop.css\"";

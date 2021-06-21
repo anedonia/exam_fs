@@ -20,7 +20,7 @@ function select_user($id_user){
 
     $sql = 'SELECT `fisrt_name` FROM `user` WHERE id_user=?';
     $req = $bdd -> prepare($sql);
-    $req->execute([$$id_user]);
+    $req->execute([$id_user]);
 
     $data = $req->fetch();
             
