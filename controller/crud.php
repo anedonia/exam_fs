@@ -15,25 +15,7 @@ if(!empty($_GET['supprimer'])){      //si dans le get il y a supprimer=id
         affichage_form_modif();
         $content = ob_get_clean();
     }else{
-        update_user("email", "hamedoula@gmail.com");
-        if(!empty($_GET["first_name"])){
-            update_user("first_name", $_GET["first_name"]);
-        }
-        if(!empty($_GET["last_name"])){
-            update_user("last_name", $_GET["last_name"]);
-        }
-        if(!empty($_GET["email"])){
-            update_user("email", $_GET["email"]);
-        }
-        if(!empty($_GET["password"])){
-            update_user("psw", $_GET["password"]);
-        }
-        if(!empty($_GET["role"])){
-            update_user("role", $_GET["role"]);
-        }
-        if(!empty($_GET["login_name"])){
-            update_user("login_name", $_GET["login_name"]);
-        }
+        update_all();
         ob_start();
         echo'modified';
         $content = ob_get_clean();

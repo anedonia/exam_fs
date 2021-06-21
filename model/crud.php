@@ -112,4 +112,25 @@ function update_user($structure, $arg){
     $req = $pdo->prepare('UPDATE `user` SET `'.$structure.'` = "'.$arg.'" WHERE `user`.`id_user` = "'.$_GET["modified"].'";');
     $req->execute();
 }
+
+function update_all(){
+    if(!empty($_GET["first_name"])){
+        update_user("first_name", $_GET["first_name"]);
+    }
+    if(!empty($_GET["last_name"])){
+        update_user("last_name", $_GET["last_name"]);
+    }
+    if(!empty($_GET["email"])){
+        update_user("email", $_GET["email"]);
+    }
+    if(!empty($_GET["password"])){
+        update_user("psw", $_GET["password"]);
+    }
+    if(!empty($_GET["role"])){
+        update_user("role", $_GET["role"]);
+    }
+    if(!empty($_GET["login_name"])){
+        update_user("login_name", $_GET["login_name"]);
+    }
+}
 ?>

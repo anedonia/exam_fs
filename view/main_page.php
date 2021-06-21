@@ -45,7 +45,7 @@
             
             <li>
                 <form id="admin" action="routeur.php" method='GET'>
-                        <input type="hidden" name="action" value="admin"/>
+                        <input type="hidden" name="action" value="crud"/>
                 </form>
                 <a class="dropdown-item" href="#" onclick='document.getElementById("admin").submit()'>Admin</a></li>
 
