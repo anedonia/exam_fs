@@ -31,6 +31,9 @@ session_start();
 				case  'cart':
 					include("./controller/voir_cart.php");
 					break;
+				case  'crud':
+					include("./controller/crud.php");
+					break;
 				default :
 					include("./controller/main_page.php");
 			}
